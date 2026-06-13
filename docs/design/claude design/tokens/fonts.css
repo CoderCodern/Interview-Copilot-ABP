@@ -1,0 +1,15 @@
+/* ============================================================
+   Interview Copilot — Webfonts
+   Serif display: Newsreader (editorial, warm, optical sizing)
+   Sans / UI:     Inter (precise, neutral, dense UI)
+   Mono:          Newsreader is not mono; we pair with the
+                  system's monospaced metrics stack for code/numbers.
+
+   These @import lines pull Google Fonts' @font-face declarations
+   into the design-system closure, so consumers get the fonts by
+   linking styles.css alone.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");

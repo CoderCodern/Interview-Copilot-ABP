@@ -1,0 +1,38 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Logo & mark" subtitle="Gradient tile + serif initials, with wordmark — light & dark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; display: grid; grid-template-columns: 1fr 1fr; font-family: var(--font-sans); }
+  .pane { padding: 30px 32px; display: flex; align-items: center; gap: 24px; }
+  .light { background: var(--paper-100); }
+  .dark { background: var(--espresso-700); }
+  .lock { display: flex; align-items: center; gap: 13px; }
+  .mark { width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center;
+          font-family: var(--font-serif); font-size: 23px; font-weight: 600; color: #FBFAF7;
+          background: linear-gradient(160deg, #8C7B68, #6E5F4F);
+          box-shadow: 0 2px 8px rgba(56,46,36,0.16), inset 0 1px 0 rgba(255,255,255,0.25); }
+  .mark span { font-style: italic; opacity: 0.85; }
+  .word { font-family: var(--font-serif); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+  .word.l { color: #171717; } .word.d { color: #F5F1EB; }
+  .sub { font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+  .sub.l { color: #99928A; } .sub.d { color: #968E84; }
+</style>
+</head>
+<body>
+  <div class="pane light">
+    <div class="lock">
+      <div class="mark">i<span>c</span></div>
+      <div><div class="word l">Interview Copilot</div><div class="sub l">Career Prep</div></div>
+    </div>
+  </div>
+  <div class="pane dark">
+    <div class="lock">
+      <div class="mark" style="background:linear-gradient(160deg,#A38D75,#BCA68C); color:#211C17;">i<span>c</span></div>
+      <div><div class="word d">Interview Copilot</div><div class="sub d">Career Prep</div></div>
+    </div>
+  </div>
+</body>
+</html>

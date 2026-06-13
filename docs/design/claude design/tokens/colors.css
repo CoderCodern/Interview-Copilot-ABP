@@ -1,0 +1,120 @@
+/* ============================================================
+   Interview Copilot — Color tokens
+   Warm minimalist. Soft off-white paper in light; espresso /
+   mocha / charcoal-brown in dark. The accent is a warm taupe
+   (camel/clay) that reads as calm, premium, career-focused.
+
+   Two layers:
+     1. BASE palette  — raw, named ramp values (--clay-500, --paper-0…)
+     2. SEMANTIC      — role aliases the UI should consume
+                        (--surface, --text, --accent, …)
+   Components reference SEMANTIC tokens only.
+   ============================================================ */
+
+:root {
+  /* ---- BASE: warm neutral "paper" ramp (light) ---- */
+  --paper-0:   #FFFFFE;   /* raised surfaces                */
+  --paper-50:  #FDFCF9;   /* card surface                   */
+  --paper-100: #FAF9F6;   /* app background (the signature) */
+  --paper-150: #F6F2ED;   /* hover wash                     */
+  --paper-200: #ECE7DF;   /* track / inset                  */
+  --paper-300: #E6E0D8;   /* border                         */
+  --paper-400: #D8D0C4;   /* strong border                  */
+  --paper-500: #B7AE9F;   /* disabled text on paper         */
+
+  /* ---- BASE: espresso / mocha ramp (warm dark neutrals) ---- */
+  --espresso-900: #2A251F; /* deepest ground                */
+  --espresso-800: #332E28;
+  --espresso-700: #3D3732;  /* dark app background          */
+  --espresso-600: #4A443E;  /* dark card surface            */
+  --espresso-500: #514B44;  /* dark raised surface          */
+  --espresso-400: #565049;  /* dark hover                   */
+  --espresso-300: #655E57;  /* dark border                  */
+  --espresso-200: #756D64;  /* dark strong border           */
+
+  /* ---- BASE: ink (warm near-black text ramp) ---- */
+  --ink-900: #171717;
+  --ink-700: #3A352F;
+  --ink-500: #6F6A64;
+  --ink-400: #99928A;
+  --ink-100: #F5F1EB;       /* warm off-white for dark text */
+
+  /* ---- BASE: clay accent (warm taupe / camel) ---- */
+  --clay-700: #6E5F4F;      /* accent deep                  */
+  --clay-600: #7C6C58;
+  --clay-500: #8C7B68;      /* accent                       */
+  --clay-400: #A38D75;      /* accent (dark mode)           */
+  --clay-300: #BCA68C;      /* accent deep (dark mode)      */
+
+  /* ---- BASE: functional hues (muted, warm-leaning) ---- */
+  --green-600: #5C7A55;  --green-500: #6E8C63;  --green-100: #E9EFE2;
+  --amber-600: #B07D32;  --amber-500: #C28F3E;  --amber-100: #F6ECD8;
+  --terra-600: #B0573F;  --terra-500: #C26A4C;  --terra-100: #F6E1D8;
+  --slate-600: #4F6071;  --slate-500: #5E7185;  --slate-100: #E2E8EE;
+
+  /* ============ SEMANTIC (light theme) ============ */
+  --bg:              var(--paper-100);
+  --surface:         var(--paper-50);
+  --surface-raised:  var(--paper-0);
+  --surface-sunken:  var(--paper-150);
+  --hover:           var(--paper-150);
+  --track:           var(--paper-200);
+
+  --border:          var(--paper-300);
+  --border-strong:   var(--paper-400);
+
+  --text:            var(--ink-900);
+  --text-2:          var(--ink-500);
+  --text-3:          var(--ink-400);
+  --text-disabled:   var(--paper-500);
+  --text-on-accent:  #FBFAF7;
+
+  --accent:          var(--clay-500);
+  --accent-deep:     var(--clay-700);
+  --accent-hover:    var(--clay-600);
+  --accent-soft:     rgba(140, 123, 104, 0.10);
+  --accent-softer:   rgba(140, 123, 104, 0.06);
+  --accent-ring:     rgba(140, 123, 104, 0.28);
+
+  /* status — surfaces use the *-100 tints, text uses *-600 */
+  --success:       var(--green-600);  --success-soft: var(--green-100);
+  --warning:       var(--amber-600);  --warning-soft: var(--amber-100);
+  --danger:        var(--terra-600);  --danger-soft:  var(--terra-100);
+  --info:          var(--slate-600);  --info-soft:    var(--slate-100);
+
+  /* focus ring */
+  --focus-ring:    var(--accent-ring);
+}
+
+/* ============ SEMANTIC (warm dark theme) ============ */
+[data-theme="dark"] {
+  --bg:              var(--espresso-700);
+  --surface:         var(--espresso-600);
+  --surface-raised:  var(--espresso-500);
+  --surface-sunken:  var(--espresso-800);
+  --hover:           var(--espresso-400);
+  --track:           var(--espresso-900);
+
+  --border:          var(--espresso-300);
+  --border-strong:   var(--espresso-200);
+
+  --text:            var(--ink-100);
+  --text-2:          #C4BCB2;
+  --text-3:          #968E84;
+  --text-disabled:   #6F675E;
+  --text-on-accent:  #211C17;
+
+  --accent:          var(--clay-400);
+  --accent-deep:     var(--clay-300);
+  --accent-hover:    var(--clay-300);
+  --accent-soft:     rgba(163, 141, 117, 0.16);
+  --accent-softer:   rgba(163, 141, 117, 0.09);
+  --accent-ring:     rgba(163, 141, 117, 0.40);
+
+  --success:       #8AA77E;  --success-soft: rgba(138,167,126,0.16);
+  --warning:       #D2A05A;  --warning-soft: rgba(210,160,90,0.16);
+  --danger:        #D08568;  --danger-soft:  rgba(208,133,104,0.16);
+  --info:          #8298AE;  --info-soft:    rgba(130,152,174,0.16);
+
+  --focus-ring:    var(--accent-ring);
+}

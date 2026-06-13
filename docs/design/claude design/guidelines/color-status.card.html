@@ -1,0 +1,37 @@
+<!-- @dsCard group="Colors" viewport="700x160" name="Status colors" subtitle="Muted, warm-leaning success / warning / danger / info" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px; background: var(--bg); font-family: var(--font-sans); }
+  .row { display: flex; gap: 12px; }
+  .cell { flex: 1; }
+  .chip { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: var(--radius-pill);
+          font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .name { font-size: 10px; color: var(--text-3); text-align: center; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="cell">
+      <div class="chip" style="background:var(--success-soft); color:var(--success)"><span class="dot" style="background:var(--success)"></span>Ready</div>
+      <div class="name">success · #5C7A55</div>
+    </div>
+    <div class="cell">
+      <div class="chip" style="background:var(--warning-soft); color:var(--warning)"><span class="dot" style="background:var(--warning)"></span>Needs work</div>
+      <div class="name">warning · #B07D32</div>
+    </div>
+    <div class="cell">
+      <div class="chip" style="background:var(--danger-soft); color:var(--danger)"><span class="dot" style="background:var(--danger)"></span>Gap</div>
+      <div class="name">danger · #B0573F</div>
+    </div>
+    <div class="cell">
+      <div class="chip" style="background:var(--info-soft); color:var(--info)"><span class="dot" style="background:var(--info)"></span>Note</div>
+      <div class="name">info · #4F6071</div>
+    </div>
+  </div>
+</body>
+</html>

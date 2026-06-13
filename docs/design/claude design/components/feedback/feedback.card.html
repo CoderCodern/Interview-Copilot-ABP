@@ -1,0 +1,60 @@
+<!-- @dsCard group="Components" viewport="700x380" name="Feedback — Ring, Meters, Loading, Empty" subtitle="Readiness gauge, progress, spinners, skeletons & empty state" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--bg); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 26px; align-items: center; }
+  .lab { font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
+  .stack { display: flex; flex-direction: column; gap: 14px; }
+  .pct { font-size: 11px; color: var(--text-2); font-variant-numeric: tabular-nums; margin-top: 5px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 18px; box-shadow: var(--shadow-sm), var(--inset-line); }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { ReadinessRing, Meter, Spinner, Skeleton, EmptyState, Button } = window.InterviewCopilotDesignSystem_d59c8c;
+    const Doc = () => <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 3v5h5"/><path d="M7 3h8l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>;
+    function Demo() {
+      return (
+        <div className="grid">
+          <ReadinessRing value={72} caption={<span><b style={{color:'var(--text)'}}>+6%</b> since last week</span>} />
+          <div>
+            <div className="lab">Meters</div>
+            <div className="stack">
+              <div><Meter value={64} /><div className="pct">Plan · 64%</div></div>
+              <div><Meter value={88} tone="success" /><div className="pct">Behavioral · strong</div></div>
+              <div><Meter value={32} tone="warning" /><div className="pct">System design · focus</div></div>
+            </div>
+            <div className="lab" style={{marginTop:'22px'}}>Loading</div>
+            <div className="card">
+              <div style={{display:'flex', alignItems:'center', gap:'10px', marginBottom:'12px'}}>
+                <Spinner /> <span style={{fontSize:'12.5px', color:'var(--text-2)'}}>Analyzing resume…</span>
+              </div>
+              <div className="stack" style={{gap:'8px'}}>
+                <Skeleton width="80%" /><Skeleton width="60%" /><Skeleton width="70%" />
+              </div>
+            </div>
+          </div>
+          <div className="card" style={{padding:0}}>
+            <EmptyState
+              icon={<Doc/>}
+              title="No resume yet"
+              description="Upload a resume and we'll extract your skills, experience and a career profile."
+              action={<Button variant="primary" size="sm">Upload resume</Button>}
+            />
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body>
+</html>

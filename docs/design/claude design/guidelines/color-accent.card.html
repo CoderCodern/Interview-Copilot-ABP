@@ -1,0 +1,28 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Clay accent ramp" subtitle="Warm taupe — the single brand accent, light & dark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px; background: var(--bg); font-family: var(--font-sans); }
+  .row { display: flex; gap: 10px; }
+  .sw { flex: 1; border-radius: var(--radius-md); height: 76px; border: 1px solid var(--border);
+        display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 10px;
+        box-shadow: var(--shadow-xs); }
+  .sw b { font-size: 11px; font-weight: 600; }
+  .sw span { font-size: 10px; opacity: 0.7; font-variant-numeric: tabular-nums; }
+  .light b, .light span { color: #FBFAF7; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw light" style="background:var(--clay-700)"><b>clay-700</b><span>#6E5F4F</span></div>
+    <div class="sw light" style="background:var(--clay-600)"><b>clay-600</b><span>#7C6C58</span></div>
+    <div class="sw light" style="background:var(--clay-500)"><b>clay-500</b><span>#8C7B68</span></div>
+    <div class="sw" style="background:var(--clay-400)"><b>clay-400</b><span>#A38D75</span></div>
+    <div class="sw" style="background:var(--clay-300)"><b>clay-300</b><span>#BCA68C</span></div>
+    <div class="sw" style="background:var(--accent-soft)"><b style="color:var(--accent-deep)">accent-soft</b><span style="color:var(--accent-deep)">10%</span></div>
+  </div>
+</body>
+</html>
