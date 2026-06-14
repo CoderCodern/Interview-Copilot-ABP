@@ -1,0 +1,267 @@
+/* ============================================================
+   Interview Copilot — global stylesheet
+   Tokens (fonts, color, type, spacing) + base layer, ported
+   verbatim from the design system (docs/design/claude design).
+   Consumers reference SEMANTIC tokens only (var(--surface), …).
+   ============================================================ */
+
+/* ---- Webfonts: Newsreader (serif) + Inter (sans) + JetBrains Mono ---- */
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ---- BASE: warm neutral "paper" ramp (light) ---- */
+  --paper-0: #fffffe;
+  --paper-50: #fdfcf9;
+  --paper-100: #faf9f6;
+  --paper-150: #f6f2ed;
+  --paper-200: #ece7df;
+  --paper-300: #e6e0d8;
+  --paper-400: #d8d0c4;
+  --paper-500: #b7ae9f;
+
+  /* ---- BASE: espresso / mocha ramp (warm dark neutrals) ---- */
+  --espresso-900: #2a251f;
+  --espresso-800: #332e28;
+  --espresso-700: #3d3732;
+  --espresso-600: #4a443e;
+  --espresso-500: #514b44;
+  --espresso-400: #565049;
+  --espresso-300: #655e57;
+  --espresso-200: #756d64;
+
+  /* ---- BASE: ink (warm near-black text ramp) ---- */
+  --ink-900: #171717;
+  --ink-700: #3a352f;
+  --ink-500: #6f6a64;
+  --ink-400: #99928a;
+  --ink-100: #f5f1eb;
+
+  /* ---- BASE: clay accent (warm taupe / camel) ---- */
+  --clay-700: #6e5f4f;
+  --clay-600: #7c6c58;
+  --clay-500: #8c7b68;
+  --clay-400: #a38d75;
+  --clay-300: #bca68c;
+
+  /* ---- BASE: functional hues (muted, warm-leaning) ---- */
+  --green-600: #5c7a55;
+  --green-500: #6e8c63;
+  --green-100: #e9efe2;
+  --amber-600: #b07d32;
+  --amber-500: #c28f3e;
+  --amber-100: #f6ecd8;
+  --terra-600: #b0573f;
+  --terra-500: #c26a4c;
+  --terra-100: #f6e1d8;
+  --slate-600: #4f6071;
+  --slate-500: #5e7185;
+  --slate-100: #e2e8ee;
+
+  /* ============ SEMANTIC (light theme) ============ */
+  --bg: var(--paper-100);
+  --surface: var(--paper-50);
+  --surface-raised: var(--paper-0);
+  --surface-sunken: var(--paper-150);
+  --hover: var(--paper-150);
+  --track: var(--paper-200);
+
+  --border: var(--paper-300);
+  --border-strong: var(--paper-400);
+
+  --text: var(--ink-900);
+  --text-2: var(--ink-500);
+  --text-3: var(--ink-400);
+  --text-disabled: var(--paper-500);
+  --text-on-accent: #fbfaf7;
+
+  --accent: var(--clay-500);
+  --accent-deep: var(--clay-700);
+  --accent-hover: var(--clay-600);
+  --accent-soft: rgba(140, 123, 104, 0.1);
+  --accent-softer: rgba(140, 123, 104, 0.06);
+  --accent-ring: rgba(140, 123, 104, 0.28);
+
+  --success: var(--green-600);
+  --success-soft: var(--green-100);
+  --warning: var(--amber-600);
+  --warning-soft: var(--amber-100);
+  --danger: var(--terra-600);
+  --danger-soft: var(--terra-100);
+  --info: var(--slate-600);
+  --info-soft: var(--slate-100);
+
+  --focus-ring: var(--accent-ring);
+
+  /* ---- type families ---- */
+  --font-serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---- weights ---- */
+  --weight-regular: 400;
+  --weight-book: 450;
+  --weight-medium: 500;
+  --weight-semi: 550;
+  --weight-bold: 600;
+
+  /* ---- type scale (px) ---- */
+  --text-2xs: 10.5px;
+  --text-xs: 11.5px;
+  --text-sm: 12.5px;
+  --text-base: 13.5px;
+  --text-md: 14px;
+  --text-lg: 17px;
+  --text-xl: 19px;
+  --text-2xl: 25px;
+  --text-3xl: 32px;
+  --text-4xl: 44px;
+  --text-5xl: 68px;
+
+  /* ---- line heights ---- */
+  --leading-tight: 1.15;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+
+  /* ---- letter spacing ---- */
+  --tracking-caps: 0.09em;
+  --tracking-tight: -0.015em;
+  --tracking-snug: -0.01em;
+  --tracking-normal: 0;
+
+  /* ---- spacing scale (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- radii ---- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-2xl: 16px;
+  --radius-pill: 999px;
+
+  /* ---- warm shadow system (tinted, layered) ---- */
+  --shadow-color: 56, 46, 36;
+  --shadow-xs: 0 1px 2px rgba(var(--shadow-color), 0.04);
+  --shadow-sm: 0 1px 2px rgba(var(--shadow-color), 0.05),
+    0 2px 6px rgba(var(--shadow-color), 0.04);
+  --shadow-md: 0 1px 2px rgba(var(--shadow-color), 0.05),
+    0 4px 12px rgba(var(--shadow-color), 0.06),
+    0 12px 28px rgba(var(--shadow-color), 0.05);
+  --shadow-lg: 0 2px 4px rgba(var(--shadow-color), 0.05),
+    0 8px 20px rgba(var(--shadow-color), 0.07),
+    0 20px 44px rgba(var(--shadow-color), 0.07);
+  --inset-line: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  --border-width: 1px;
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 0.15s;
+  --dur-base: 0.2s;
+  --dur-slow: 0.35s;
+  --dur-ring: 1s;
+}
+
+/* ============ SEMANTIC (warm dark theme) ============ */
+[data-theme="dark"] {
+  --bg: var(--espresso-700);
+  --surface: var(--espresso-600);
+  --surface-raised: var(--espresso-500);
+  --surface-sunken: var(--espresso-800);
+  --hover: var(--espresso-400);
+  --track: var(--espresso-900);
+
+  --border: var(--espresso-300);
+  --border-strong: var(--espresso-200);
+
+  --text: var(--ink-100);
+  --text-2: #c4bcb2;
+  --text-3: #968e84;
+  --text-disabled: #6f675e;
+  --text-on-accent: #211c17;
+
+  --accent: var(--clay-400);
+  --accent-deep: var(--clay-300);
+  --accent-hover: var(--clay-300);
+  --accent-soft: rgba(163, 141, 117, 0.16);
+  --accent-softer: rgba(163, 141, 117, 0.09);
+  --accent-ring: rgba(163, 141, 117, 0.4);
+
+  --success: #8aa77e;
+  --success-soft: rgba(138, 167, 126, 0.16);
+  --warning: #d2a05a;
+  --warning-soft: rgba(210, 160, 90, 0.16);
+  --danger: #d08568;
+  --danger-soft: rgba(208, 133, 104, 0.16);
+  --info: #8298ae;
+  --info-soft: rgba(130, 152, 174, 0.16);
+
+  --focus-ring: var(--accent-ring);
+
+  --shadow-color: 18, 14, 10;
+  --inset-line: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ---- base layer ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--dur-slow) var(--ease-soft),
+    color var(--dur-slow) var(--ease-soft);
+}
+
+/* Paper grain — barely-there fractal noise so surfaces never feel flat. */
+.ic-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.35 0 0 0 0 0.28 0 0 0 0.02 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
