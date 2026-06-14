@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import { Avatar, IconButton, Meter, NavItem } from "@/components/ds";
 import { Icons, type IconProps } from "@/components/icons";
 import { ThemeToggle } from "./ThemeToggle";
+import { useOnboarding } from "./OnboardingProvider";
 
 interface NavLink {
   href: string;
@@ -41,6 +42,7 @@ const NAV: NavSection[] = [
     items: [
       { href: "/mock", label: "Mock Interview", icon: Icons.Mic },
       { href: "/assistant", label: "AI Assistant", icon: Icons.Chat },
+      { href: "/knowledge", label: "Knowledge", icon: Icons.Book },
       { href: "/progress", label: "Progress", icon: Icons.Chart },
     ],
   },
@@ -49,6 +51,7 @@ const NAV: NavSection[] = [
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const { openOnboarding } = useOnboarding();
 
   return (
     <div className="app ic-grain">
@@ -62,6 +65,10 @@ export function AppShell({ children }: { children: ReactNode }) {
             <div className="brand-sub">Career Prep</div>
           </div>
         </div>
+
+        <button className="new-prep" onClick={openOnboarding}>
+          <Icons.Plus size={15} /> New prep
+        </button>
 
         {NAV.map((sec) => (
           <div key={sec.group}>
@@ -80,7 +87,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         ))}
 
         <div className="sidebar-foot">
-          <div className="plan-card">
+          <div className="plan-card" style={{ cursor: "pointer" }} onClick={() => router.push("/plan")}>
             <div className="plan-title">Stripe loop — 14-day plan</div>
             <div className="plan-meta">Day 9 of 14 · on track</div>
             <Meter value={64} />

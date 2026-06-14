@@ -23,7 +23,7 @@ function ThemeToggle() {
   );
 }
 
-function AppShell({ active, onNavigate, title, eyebrow, subtitle, actions, children }) {
+function AppShell({ active, onNavigate, onStartOnboarding, title, eyebrow, subtitle, actions, children }) {
   const I = window.ICIcons;
   const nav = [
     { group: "Workspace", items: [
@@ -39,6 +39,7 @@ function AppShell({ active, onNavigate, title, eyebrow, subtitle, actions, child
     { group: "Practice", items: [
       { id: "mock", label: "Mock Interview", icon: I.Mic },
       { id: "assistant", label: "AI Assistant", icon: I.Chat },
+      { id: "knowledge", label: "Knowledge", icon: I.Book },
       { id: "progress", label: "Progress", icon: I.Chart },
     ]},
   ];
@@ -53,6 +54,10 @@ function AppShell({ active, onNavigate, title, eyebrow, subtitle, actions, child
             <div className="brand-sub">Career Prep</div>
           </div>
         </div>
+
+        <button className="new-prep" onClick={onStartOnboarding}>
+          <I.Plus size={15} /> New prep
+        </button>
 
         {nav.map((sec) => (
           <React.Fragment key={sec.group}>
@@ -72,7 +77,7 @@ function AppShell({ active, onNavigate, title, eyebrow, subtitle, actions, child
         ))}
 
         <div className="sidebar-foot">
-          <div className="plan-card">
+          <div className="plan-card" style={{ cursor: "pointer" }} onClick={() => onNavigate("plan")}>
             <div className="plan-title">Stripe loop — 14-day plan</div>
             <div className="plan-meta">Day 9 of 14 · on track</div>
             <Meter value={64} />
@@ -85,7 +90,7 @@ function AppShell({ active, onNavigate, title, eyebrow, subtitle, actions, child
               <div className="user-name">Coder Codern</div>
               <div className="user-mail">coder@example.com</div>
             </div>
-            <IconButton label="Sign out" variant="ghost" size="sm" onClick={(e) => { e.stopPropagation(); window.location.href = "../marketing/login.html"; }}><I.Logout size={15} /></IconButton>
+            <IconButton label="Sign out" variant="ghost" size="sm" onClick={(e) => { e.stopPropagation(); }}><I.Logout size={15} /></IconButton>
           </div>
         </div>
       </aside>

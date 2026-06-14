@@ -42,3 +42,15 @@ export type { InputProps } from "./Input";
 
 export { Checkbox } from "./Checkbox";
 export type { CheckboxProps } from "./Checkbox";
+
+export { Select } from "./Select";
+export type { SelectProps } from "./Select";
+
+export { Switch } from "./Switch";
+export type { SwitchProps } from "./Switch";
+
+export { Textarea } from "./Textarea";
+export type { TextareaProps } from "./Textarea";
+
+export { Dialog } from "./Dialog";
+export type { DialogProps } from "./Dialog";

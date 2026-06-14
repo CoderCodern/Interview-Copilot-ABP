@@ -1,16 +1,17 @@
 import { PageHeader } from "@/components/app/PageHeader";
-import { Placeholder } from "@/components/app/Placeholder";
-import { Icons } from "@/components/icons";
+import { Progress } from "@/components/app/Progress";
+import { Badge } from "@/components/ds";
 
 export default function ProgressPage() {
   return (
     <>
-      <PageHeader eyebrow="Trends" title={<><em>Progress</em></>} subtitle="Readiness over time, by track." />
-      <Placeholder
-        icon={<Icons.Chart size={22} />}
-        title="Progress"
-        description="Readiness trends, study-time charts and per-track breakdowns live here."
+      <PageHeader
+        eyebrow="Trends"
+        title={<><em>Progress</em></>}
+        subtitle="Readiness over time, by track."
+        actions={<Badge tone="success">+6% this week</Badge>}
       />
+      <Progress />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/app/PageHeader";
-import { Placeholder } from "@/components/app/Placeholder";
+import { PrepPlan } from "@/components/app/PrepPlan";
+import { Button } from "@/components/ds";
 import { Icons } from "@/components/icons";
 
 export default function PlanPage() {
@@ -8,13 +9,14 @@ export default function PlanPage() {
       <PageHeader
         eyebrow="Plan"
         title={<>Preparation <em>Plan</em></>}
-        subtitle="A day-by-day plan toward your target date."
+        subtitle="A day-by-day plan toward your target date, weighted to your gaps."
+        actions={
+          <Button variant="secondary" iconLeft={<Icons.Sparkle size={14} />}>
+            Regenerate
+          </Button>
+        }
       />
-      <Placeholder
-        icon={<Icons.Target size={22} />}
-        title="Preparation plan"
-        description="Generate a plan from a job description and target date to see scheduled tracks here."
-      />
+      <PrepPlan />
     </>
   );
 }

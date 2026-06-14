@@ -32,14 +32,21 @@ Marketing + auth:
 - `/` — editorial landing page (typewriter hero, workflow, quote band, CTA).
 - `/login` — sign in / register, with the mouse-scrub video background. Submitting (or "Continue with Google") routes to the dashboard.
 
-The product app (left-sidebar shell, light/dark toggle):
+The product app (left-sidebar shell, "New prep" button, light/dark toggle, first-run onboarding dialog):
 
 - `/dashboard` — today's focus hero, readiness ring, stat strip, study tracks, sessions, notes.
 - `/resume` — parsed resume: matched/gap skills, experience, education, career profile.
-- `/jobs` — job description requirements table, per-requirement match, skill-gap score.
+- `/jobs` — JD → skill-gap analysis with three switchable views (match map / requirements table / coverage) and a score rail. "Add job" launches the onboarding flow.
+- `/company` — company research: culture, facts, interview-loop stages, what they'll probe, recent news.
+- `/plan` — day-by-day preparation timeline with projected readiness and time allocation.
+- `/schedule` — week calendar of study blocks and mock sessions, with an "up next" rail.
 - `/mock` — live AI mock interview chat (recording state, typing indicator).
 - `/assistant` — AI assistant chat grounded in resume/notes, with suggestion pills.
-- `/company`, `/plan`, `/schedule`, `/progress`, `/profile` — framed placeholders for screens that ship in the full product.
+- `/knowledge` — question bank, notes and flashcards with confidence tracking and a review-status rail.
+- `/progress` — readiness trend, study-time chart, per-track breakdown and mock-score history.
+- `/profile` — account details, target role, notification switches and connected accounts.
+
+The onboarding flow (resume → job description → generate plan) is a 3-step dialog reachable from "New prep" in the sidebar or "Add job" on the Jobs screen; finishing routes to the plan.
 
 ## Project layout
 

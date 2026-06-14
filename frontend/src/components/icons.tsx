@@ -3,17 +3,20 @@
    the product's inline-SVG iconography. Each is a small typed React
    component taking { size, stroke }. */
 
+import type { CSSProperties, ReactNode } from "react";
+
 export interface IconProps {
   size?: number;
   stroke?: number;
   fill?: string;
+  style?: CSSProperties;
 }
 
 interface BaseIconProps extends IconProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-function Icon({ size = 18, stroke = 1.8, children, fill = "none" }: BaseIconProps) {
+function Icon({ size = 18, stroke = 1.8, children, fill = "none", style }: BaseIconProps) {
   return (
     <svg
       width={size}
@@ -24,7 +27,7 @@ function Icon({ size = 18, stroke = 1.8, children, fill = "none" }: BaseIconProp
       strokeWidth={stroke}
       strokeLinecap="round"
       strokeLinejoin="round"
-      style={{ flexShrink: 0 }}
+      style={{ flexShrink: 0, ...style }}
     >
       {children}
     </svg>
@@ -166,6 +169,132 @@ export const Icons = {
   Send: (p: IconProps) => (
     <Icon {...p}>
       <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+    </Icon>
+  ),
+  Globe: (p: IconProps) => (
+    <Icon {...p}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
+    </Icon>
+  ),
+  Book: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M4 5a2 2 0 012-2h13a1 1 0 011 1v15a1 1 0 01-1 1H6a2 2 0 01-2-2z" />
+      <path d="M4 18a2 2 0 012-2h14" />
+    </Icon>
+  ),
+  Bookmark: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z" />
+    </Icon>
+  ),
+  Flag: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M5 21V4M5 4h12l-2 4 2 4H5" />
+    </Icon>
+  ),
+  Star: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M12 3l2.6 5.6L21 9.5l-4.6 4.3L17.5 21 12 17.8 6.5 21l1.1-7.2L3 9.5l6.4-.9z" />
+    </Icon>
+  ),
+  Play: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M7 4l13 8-13 8z" />
+    </Icon>
+  ),
+  Pause: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M8 4v16M16 4v16" />
+    </Icon>
+  ),
+  Edit: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z" />
+    </Icon>
+  ),
+  Download: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M12 4v12M7 11l5 5 5-5" />
+      <path d="M5 20h14" />
+    </Icon>
+  ),
+  Link: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1" />
+      <path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1" />
+    </Icon>
+  ),
+  Filter: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M3 5h18l-7 8v6l-4 2v-8z" />
+    </Icon>
+  ),
+  Dots: (p: IconProps) => (
+    <Icon {...p}>
+      <circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none" />
+    </Icon>
+  ),
+  ChevronRight: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M9 6l6 6-6 6" />
+    </Icon>
+  ),
+  Trophy: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M7 4h10v5a5 5 0 01-10 0z" />
+      <path d="M7 6H4a2 2 0 002 4M17 6h3a2 2 0 01-2 4M9 20h6M10 14v3a2 2 0 002 2 2 2 0 002-2v-3" />
+    </Icon>
+  ),
+  Flame: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M12 3c1 4 5 5 5 9a5 5 0 01-10 0c0-2 1-3 1-3 1 1 2 1 2-1 0-2-1-3 2-4z" />
+    </Icon>
+  ),
+  Bulb: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M9 18h6M10 21h4M12 3a6 6 0 014 10.5c-.7.7-1 1.3-1 2.5H9c0-1.2-.3-1.8-1-2.5A6 6 0 0112 3z" />
+    </Icon>
+  ),
+  Quote: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M7 7h4v6a4 4 0 01-4 4M13 7h4v6a4 4 0 01-4 4" />
+    </Icon>
+  ),
+  Users: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M16 19v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 9a3 3 0 100-6 3 3 0 000 6zM22 19v-2a4 4 0 00-3-3.9M16 3.1A4 4 0 0116 11" />
+    </Icon>
+  ),
+  TrendUp: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M3 17l6-6 4 4 8-8" />
+      <path d="M15 7h6v6" />
+    </Icon>
+  ),
+  X: (p: IconProps) => (
+    <Icon {...p} stroke={p?.stroke || 2.2}>
+      <path d="M6 6l12 12M18 6L6 18" />
+    </Icon>
+  ),
+  Wave: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M2 12h2l2-6 4 14 4-18 2 10h6" />
+    </Icon>
+  ),
+  Compass: (p: IconProps) => (
+    <Icon {...p}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M15.5 8.5l-2 5-5 2 2-5z" />
+    </Icon>
+  ),
+  Coffee: (p: IconProps) => (
+    <Icon {...p}>
+      <path d="M4 8h13v5a4 4 0 01-4 4H8a4 4 0 01-4-4z" />
+      <path d="M17 9h2a2 2 0 010 4h-2M5 3v1M9 3v1M13 3v1" />
     </Icon>
   ),
 } as const;

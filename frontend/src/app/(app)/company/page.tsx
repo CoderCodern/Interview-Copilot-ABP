@@ -1,6 +1,6 @@
+import { CompanyResearch } from "@/components/app/CompanyResearch";
 import { PageHeader } from "@/components/app/PageHeader";
-import { Placeholder } from "@/components/app/Placeholder";
-import { Icons } from "@/components/icons";
+import { Badge } from "@/components/ds";
 
 export default function CompanyPage() {
   return (
@@ -8,13 +8,10 @@ export default function CompanyPage() {
       <PageHeader
         eyebrow="Research"
         title={<>Company <em>Research</em></>}
-        subtitle="Culture, interview style and recent news."
+        subtitle="Who you're meeting, how the loop runs, and what they'll probe."
+        actions={<Badge tone="accent">Stripe</Badge>}
       />
-      <Placeholder
-        icon={<Icons.Building size={22} />}
-        title="Company research"
-        description="Deep-dives on culture, hiring process and interview style assemble here once a company is added."
-      />
+      <CompanyResearch />
     </>
   );
 }
