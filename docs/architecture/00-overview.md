@@ -29,7 +29,7 @@ The backend is a single deployable **ABP layered modular monolith** on **.NET 10
 flowchart TB
     subgraph Clients
         UP["User portal<br/>Next.js / React / TS"]
-        AP["Admin portal<br/>ABP dashboard"]
+        AP["Admin console<br/>Next.js / React / TS<br/>(operator-facing, shared design system)"]
     end
 
     subgraph Host["InterviewCopilot.HttpApi.Host (single process)"]

@@ -48,6 +48,20 @@ The product app (left-sidebar shell, "New prep" button, light/dark toggle, first
 
 The onboarding flow (resume → job description → generate plan) is a 3-step dialog reachable from "New prep" in the sidebar or "Add job" on the Jobs screen; finishing routes to the plan.
 
+The admin console (operations sidebar, env chip, dark/light toggle) — a separate operator-facing surface under `/admin`:
+
+- `/admin` — operations overview: status hero, KPI tiles with sparklines, AI request-volume chart, background-job queue, recent incidents, spend by surface.
+- `/admin/models` — provider comparison cards (status, cost, context, vision, traffic share) + a capability matrix.
+- `/admin/routing` — task → model routing map with an inline model picker and a fallback policy.
+- `/admin/prompts` — versioned prompt manager (prompt list, editor with token highlighting, test panel, version/diff rail).
+- `/admin/ai-usage` — per-request log (user, model, task, tokens, cost, latency, status) with summary tiles.
+- `/admin/ai-cost` — spend KPIs, daily-spend bars, spend-by-model donut, top cost drivers.
+- `/admin/users` — user directory with role, plan, AI-usage meter and status.
+- `/admin/jobs` — background-job queue with progress and worker state.
+- `/admin/health` — service status grid, p95 latency chart, infrastructure gauges.
+- `/admin/audit` — operator/system audit trail.
+- Other nav destinations (roles, plans, content, analytics, settings, …) render a calm "designed, pending data" placeholder.
+
 ## Project layout
 
 ```
@@ -60,19 +74,29 @@ src/
       layout.tsx            authenticated shell (AppShell)
       dashboard/ resume/ jobs/ mock/ assistant/
       company/ plan/ schedule/ progress/ profile/
+    admin/
+      layout.tsx            loads app.css + admin.css
+      [[...slug]]/page.tsx  console router (nav id → screen + topbar)
   components/
     ds/                     design-system primitives (Button, Badge, Tag,
                             Card, Meter, ReadinessRing, Tabs, Input, …)
     app/                    AppShell + product screens
+    admin/                  AdminShell + admin console screens + adminIcons
     marketing/              Landing + Login
     icons.tsx               Lucide-style icon set
   styles/
     globals.css             design tokens + base layer (linked everywhere)
     app.css                 app shell + screen layout
+    app.extra.css           extended product-screen styles
+    admin.css               admin console styles (scoped under .admin-console)
     marketing.css           landing page
     login.css               auth page
   lib/theme.ts              light/dark theme helpers
 ```
+
+The admin stylesheet is scoped under `.admin-console` (and its stacked-bar
+sub-classes are renamed `.bstack` / `.bseg`) so the operator console and the
+product app never collide on shared global class names.
 
 ## Theming
 

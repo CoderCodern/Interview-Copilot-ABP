@@ -9,7 +9,7 @@ AI SaaS that helps candidates prepare for interviews (resume parsing, JD analysi
 - Backend: .NET 10 LTS, ABP Framework 10.x (open source), modular monolith — **no microservices**
 - DB: PostgreSQL 17, one database, schema-per-module, EF Core (Npgsql), pgvector for embeddings
 - Auth: OpenIddict (auth code + PKCE), JWT + rotating refresh, Google OAuth (MS/LinkedIn later)
-- Frontend: Next.js/React/TS (separate); Admin: ABP dashboard
+- Frontend: Next.js/React/TS (separate). Admin: custom operator console at `/admin`, same Next.js app + shared warm-editorial design system (not the stock ABP dashboard)
 - AI: Claude + OpenAI + Gemini behind `IAIProvider` strategy in AI Core module — business modules NEVER reference LLM SDKs
 
 ## Modules (bounded contexts)
