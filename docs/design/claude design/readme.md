@@ -135,6 +135,7 @@ If brand photography/illustration is commissioned later, drop it in `assets/` an
 **UI kits** (`ui_kits/`)
 - `app/` — the product web app: **Dashboard, Resume Analysis, Job & Skill-Gap, Mock Interview, AI Assistant**, plus framed placeholders for Company Research / Plan / Schedule / Progress / Profile. Interactive screen routing. Open `app/index.html`.
 - `marketing/` — the editorial landing page with the immersive typewriter hero + workflow. Open `marketing/index.html`.
+- `admin/` — the **Admin Console**: a full operations dashboard for platform operators. Covers AI Operations (Models, Task Routing, Prompt Management, AI Usage, Cost Analytics), Users, Background Jobs, System Health, Audit Logs, and 14 further surfaces as elegant placeholders — all routed from a six-group sidebar. Light + espresso dark themes. Open `admin/index.html`.
 
 **Other**
 - `SKILL.md` — makes this folder usable as a downloadable Agent Skill.

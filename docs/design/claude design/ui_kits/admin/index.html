@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Copilot — Admin Console</title>
+
+<!-- Design System tokens -->
+<link rel="stylesheet" href="../../tokens/fonts.css">
+<link rel="stylesheet" href="../../tokens/colors.css">
+<link rel="stylesheet" href="../../tokens/typography.css">
+<link rel="stylesheet" href="../../tokens/spacing.css">
+<link rel="stylesheet" href="../../tokens/base.css">
+
+<!-- User app shell + extended screen styles -->
+<link rel="stylesheet" href="../app/app.css">
+<link rel="stylesheet" href="../app/app.extra.css">
+
+<!-- Admin console overrides -->
+<link rel="stylesheet" href="admin.css">
+
+<script>
+  // restore theme preference (admin console uses its own key)
+  try {
+    var t = localStorage.getItem("ic-admin-theme");
+    if (t) document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Design System bundle (components on window.InterviewCopilotDesignSystem_d59c8c) -->
+<script src="../../_ds_bundle.js"></script>
+
+<!-- Shared icon set + admin-only glyphs -->
+<script type="text/babel" src="../app/Icons.jsx"></script>
+<script type="text/babel" src="AdminIcons.jsx"></script>
+
+<!-- Admin screens -->
+<script type="text/babel" src="AdminShell.jsx"></script>
+<script type="text/babel" src="Overview.jsx"></script>
+<script type="text/babel" src="Models.jsx"></script>
+<script type="text/babel" src="TaskRouting.jsx"></script>
+<script type="text/babel" src="Prompts.jsx"></script>
+<script type="text/babel" src="Usage.jsx"></script>
+<script type="text/babel" src="Users.jsx"></script>
+<script type="text/babel" src="Platform.jsx"></script>
+
+<!-- Router -->
+<script type="text/babel" src="admin.jsx"></script>
+
+<!-- Mount -->
+<script type="text/babel">
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    React.createElement(window.AdminApp)
+  );
+</script>
+</body>
+</html>
