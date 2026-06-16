@@ -1,0 +1,37 @@
+<Project>
+
+  <!--
+    Central Package Management (CPM). Projects reference packages WITHOUT a Version;
+    the version is pinned here once for the whole solution.
+
+    NOTE: these versions could not be restored/verified offline while scaffolding.
+    Bump to the latest compatible versions on first `dotnet restore` if any fail to resolve.
+  -->
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup Label="Aspire">
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.4.2" />
+  </ItemGroup>
+
+  <!--
+    Packages each module will pull in as it is implemented are intentionally NOT
+    listed yet (EF Core, Npgsql, StackExchange.Redis, FluentValidation, MediatR/dispatcher,
+    OpenTelemetry, Serilog, provider SDKs, …). Add them here when you build that module.
+  -->
+
+  <ItemGroup Label="Testing">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="xunit" Version="2.9.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+    <PackageVersion Include="FluentAssertions" Version="6.12.2" />
+    <PackageVersion Include="NSubstitute" Version="5.3.0" />
+    <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.0" />
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="4.0.0" />
+    <PackageVersion Include="Testcontainers.Redis" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

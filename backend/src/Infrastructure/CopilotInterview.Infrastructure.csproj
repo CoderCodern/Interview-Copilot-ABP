@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Infrastructure: concrete implementations of Application ports — EF Core DbContext,
+    configurations, interceptors (audit/soft-delete/domain-event dispatch), migrations,
+    Redis cache, identity/token services, file storage, background-job scheduler.
+    Dependency rule: depends on Application (to implement its interfaces) + Domain.
+    Referenced by Api only at the composition root.
+  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\CopilotInterview.Application.csproj" />
+    <ProjectReference Include="..\Domain\CopilotInterview.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

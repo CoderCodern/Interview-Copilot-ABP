@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Domain/CopilotInterview.Domain.csproj" />
+    <Project Path="src/Application/CopilotInterview.Application.csproj" />
+    <Project Path="src/Ai.Abstractions/CopilotInterview.Ai.Abstractions.csproj" />
+    <Project Path="src/Ai/CopilotInterview.Ai.csproj" />
+    <Project Path="src/Infrastructure/CopilotInterview.Infrastructure.csproj" />
+    <Project Path="src/ServiceDefaults/CopilotInterview.ServiceDefaults.csproj" />
+    <Project Path="src/Api/CopilotInterview.Api.csproj" />
+    <Project Path="src/AppHost/CopilotInterview.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Domain.UnitTests/CopilotInterview.Domain.UnitTests.csproj" />
+    <Project Path="test/Application.UnitTests/CopilotInterview.Application.UnitTests.csproj" />
+    <Project Path="test/Application.IntegrationTests/CopilotInterview.Application.IntegrationTests.csproj" />
+    <Project Path="test/Api.FunctionalTests/CopilotInterview.Api.FunctionalTests.csproj" />
+    <Project Path="test/Architecture.Tests/CopilotInterview.Architecture.Tests.csproj" />
+  </Folder>
+  <Folder Name="/solution/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+  </Folder>
+</Solution>

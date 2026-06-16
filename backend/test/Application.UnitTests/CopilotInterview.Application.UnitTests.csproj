@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup Label="Test SDK">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="NSubstitute" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Application\CopilotInterview.Application.csproj" />
+    <ProjectReference Include="..\..\src\Domain\CopilotInterview.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Ai.Abstractions\CopilotInterview.Ai.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

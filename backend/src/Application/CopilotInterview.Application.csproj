@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Application: use cases as vertical slices (Features/<Context>/<UseCase>) + ports
+    (interfaces it needs from the outside) + cross-cutting pipeline behaviors.
+    Dependency rule: depends on Domain and Ai.Abstractions ONLY.
+    No EF Core, no ASP.NET, no provider SDKs, no Redis client.
+  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\CopilotInterview.Domain.csproj" />
+    <ProjectReference Include="..\Ai.Abstractions\CopilotInterview.Ai.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Domain: enterprise rules — entities, aggregate roots, value objects, domain events.
+    Dependency rule: depends on NOTHING (no other project, no infrastructure packages).
+  -->
+
+</Project>

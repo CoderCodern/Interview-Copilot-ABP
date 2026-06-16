@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" />
+
+  <!--
+    AppHost: .NET Aspire orchestration — declares the resource graph (Api, Postgres+pgvector,
+    Redis, frontend, OTLP) and wires connection strings / service discovery.
+    Orchestration only — NO business logic. Nothing references AppHost.
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>copilot-interview-apphost</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Referenced so AppHost can add the Api as an Aspire resource (Projects.* metadata). -->
+    <ProjectReference Include="..\Api\CopilotInterview.Api.csproj" />
+  </ItemGroup>
+
+</Project>

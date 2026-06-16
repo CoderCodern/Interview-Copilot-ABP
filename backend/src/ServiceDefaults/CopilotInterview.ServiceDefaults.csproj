@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    ServiceDefaults: shared startup extensions for every runnable service —
+    OpenTelemetry (traces/metrics/logs + OTLP), health checks, HTTP resilience,
+    service discovery. The single place Aspire/OTel wiring lives.
+
+    Left empty in Phase 0 scaffolding. When implemented it will reference the
+    Aspire ServiceDefaults packages (Microsoft.Extensions.Http.Resilience,
+    Microsoft.Extensions.ServiceDiscovery, OpenTelemetry.* exporters/instrumentation).
+    Add those to Directory.Packages.props at that time.
+  -->
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>

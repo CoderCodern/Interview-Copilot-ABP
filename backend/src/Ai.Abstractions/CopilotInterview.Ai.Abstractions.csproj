@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Ai.Abstractions: the capability interfaces the Application layer depends on
+    (IAiChatCompletion / IAiStructuredExtraction / IAiEmbeddingService) plus shared
+    AI request/response contracts. NO provider SDKs here.
+    Split out from the Ai implementation so Application can depend on the abstraction
+    only (honors the dependency rule in docs/blueprint/03-backend-architecture.md).
+  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\CopilotInterview.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--
+    Api: the HTTP host and composition root. Minimal API endpoints (Endpoints/),
+    cross-cutting middleware (Extensions/), and DI wiring of Application + Infrastructure + Ai.
+    This is the one place allowed to reference all the outer projects.
+  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\CopilotInterview.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\CopilotInterview.Infrastructure.csproj" />
+    <ProjectReference Include="..\Ai\CopilotInterview.Ai.csproj" />
+    <ProjectReference Include="..\ServiceDefaults\CopilotInterview.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

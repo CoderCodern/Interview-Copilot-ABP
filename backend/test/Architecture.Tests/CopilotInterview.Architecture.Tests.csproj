@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Architecture tests: enforce the dependency rule and cross-context boundaries
+    (NetArchTest). References every production assembly so it can assert allowed/forbidden
+    dependencies. This is what keeps the modular monolith from eroding.
+  -->
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup Label="Test SDK">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="NetArchTest.Rules" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Domain\CopilotInterview.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Application\CopilotInterview.Application.csproj" />
+    <ProjectReference Include="..\..\src\Ai.Abstractions\CopilotInterview.Ai.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Ai\CopilotInterview.Ai.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\CopilotInterview.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Api\CopilotInterview.Api.csproj" />
+  </ItemGroup>
+
+</Project>
